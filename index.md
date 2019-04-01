@@ -1,37 +1,64 @@
-## Welcome to GitHub Pages
+## MATLAB Tutorial
 
-You can use the [editor on GitHub](https://github.com/aholdeman/malab-test/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+MATLAB is a high-level language and interactive environment for numerical computation, visualization, and programming. Using MATLAB, you can analyze data, develop algorithms, and create models and applications. The program can be used with the GUI or in batch mode. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+[Documentation for MATLAB can be found on its official website.](https://www.mathworks.com/help/matlab/)
 
-### Markdown
+Currently, MATLAB version R2017b is available on the cluster.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+To use MATLAB through the command line, first load the MATLAB module, then use a command similar to:
 
-```markdown
-Syntax highlighted code block
+`matlab -r myscript.m`
 
-# Header 1
-## Header 2
-### Header 3
+where _myscript.m_ is the MATLAB script you wish to run. 
 
-- Bulleted
-- List
+To run MATLAB interactively (using the GUI), you must first enable transparent forwarding when connecting to the server using the -X option to the ssh command. Once logged in, start the MATLAB GUI by simply typing matlab into the command line. 
 
-1. Numbered
-2. List
+Below, you will find an example of how to run MATLAB using a job script.
 
-**Bold** and _Italic_ and `Code` text
+1. Create a MATLAB script. The linked repository provides a simple script, matlabtest.m, which generates a matrix, randomly populates it, finds the inverse, and then computes the product of the two matrices.
 
-[Link](url) and ![Image](src)
-```
+#### matlabtest.m
+`
+% sets the size of the matrix to 4 x 4
+n = 4;
+% randomly populates the matrix with values
+A = rand(n);
+% print the result
+A
+% takes the inverse of the matrix
+V = inv(A);
+% print the result
+V
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+% multiply by the original matrix to get the identity matrix
+I = V*A
+`
 
-### Jekyll Themes
+2. Prepare the submission script, which is the script that is submitted to the Slurm scheduler as a job in order to run the MATLAB script. The linked repository provides the script _job.sh_ as an example.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/aholdeman/malab-test/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+#### job.sh
+`
+#!/bin/bash
 
-### Support or Contact
+#SBATCH --job-name=matlab_test
+#SBATCH -o matlab_out%j.out
+#SBATCH -e matlab_err%j.err
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=1
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+echo -e '\n submitted Matlab job'
+echo 'hostname'
+hostname
+
+#loads the matlab module
+module load matlab
+
+#runs the matlabtest.m file using matlab, forwards results to results.txt
+matlab -r matlabtest > results.txt
+`
+
+3. Submit the job using
+	`sbatch job.sh`
+  
+4. Examine the results
