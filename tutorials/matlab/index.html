@@ -4,9 +4,10 @@ title: MATLAB Tutorial
 ---
 
 <div>
-	<h2>MATLAB Tutorial</h2>
+	<h1>MATLAB Tutorial</h1>
 	<p>
-		MATLAB is a high-level language and interactive environment for numerical computation, visualization, and programming. Using MATLAB, you can analyze data, develop algorithms, and create models and applications. The program can be used with the GUI or in batch mode. Documentation for MATLAB can be found on its official website.
+		MATLAB is a high-level language and interactive environment for numerical computation, visualization, and programming. Using MATLAB, you can analyze data, develop algorithms, and create models and applications. The program can be used with the GUI or in batch mode.
+		<a href="https://www.mathworks.com/help/matlab/">Documentation for MATLAB can be found on its official website.</a>
 		Currently, MATLAB version R2017b is available on the cluster. </p>
 
 	<p>To use MATLAB through the command line, first load the MATLAB module, then use a command similar to below:
@@ -17,9 +18,26 @@ title: MATLAB Tutorial
 	</p>
 
 </div>
-<div class="card">
-	<div class="card-body">
-		This is some text within a card body.
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">matlabtest.m</h3>
+	</div>
+	<div class="panel-body">
+		<pre><code>
+	% sets the size of the matrix to 4 x 4
+	n = 4;
+	% randomly populates the matrix with values
+	A = rand(n);
+	% print the result
+	A
+	% takes the inverse of the matrix
+	V = inv(A);
+	% print the result
+	V
+
+	% multiply by the original matrix to get the identity matrix
+	I = V*A
+	</code></pre>
 	</div>
 </div>
 <div>
