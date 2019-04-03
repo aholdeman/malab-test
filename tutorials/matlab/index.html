@@ -20,12 +20,14 @@ title: MATLAB Tutorial
 </div>
 <div>
 	Below, you will find an example of running MATLAB by submitting a job script. The files in this tutorial are also located on the Research Computing Github, which can be found here:
-	<br/><button type="button" style="text-align: center" class="btn btn-default">RC MATLAB Tutorial</button>
+	<br/><button type="button" style="text-align: center" class="btn btn-default"><a href="https://github.com/torkian/slurm-matlab/tree/matlab-tutorial">RC MATLAB Tutorial</a></button>
 </div>
+
 <div>
+	<h3>Running MATLAB through a job script</h3>
 	1. Create a MATLAB script. The linked repository provides a simple script, matlabtest.m, which generates a matrix, randomly populates it, finds the inverse, and then computes the product of the two matrices.
 
-	<h3>matlabtest.m</h3>
+	<h4>matlabtest.m</h4>
 	<pre><code>
 	% sets the size of the matrix to 4 x 4
 	n = 4;
@@ -41,9 +43,9 @@ title: MATLAB Tutorial
 	% multiply by the original matrix to get the identity matrix
 	I = V*A
 	</code></pre>
-	2. Prepare the submission script, which is the script that is submitted to the Slurm scheduler as a job in order to run the MATLAB script. The linked repository provides the script _job.sh_ as an example.
+	2. Prepare the submission script, which is the script that is submitted to the Slurm scheduler as a job in order to run the MATLAB script. The linked repository provides the script <i>job.sh</i> as an example.
 
-	<h3>job.sh</h3>
+	<h4>job.sh</h4>
 	<pre><code>
 	#!/bin/bash
 
@@ -68,5 +70,5 @@ title: MATLAB Tutorial
 	<code>sbatch job.sh</code>
 
 
-	<p>4. Examine the results</p>
+	<p>4. Examine the results by opening the created output file.</p>
 </div>
