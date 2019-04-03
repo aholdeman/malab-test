@@ -17,3 +17,8 @@ pre code {
     display: block;
     padding: 20px;
 }
+
+div {
+    text-align: center;
+    color: green;
+}
