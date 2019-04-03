@@ -17,48 +17,10 @@ title: MATLAB Tutorial
 	</p>
 
 </div>
-<div>
-	<b-tabs content-class="mt-3">
-		<b-tab title="first" active>
-				<pre><code>
-	% sets the size of the matrix to 4 x 4
-	n = 4;
-	% randomly populates the matrix with values
-	A = rand(n);
-	% print the result
-	A
-	% takes the inverse of the matrix
-	V = inv(A);
-	% print the result
-	V
-
-	% multiply by the original matrix to get the identity matrix
-	I = V*A
-	</code></pre>
-		</b-tab>
-		<b-tab title="second">
-			<pre><code>
-	#!/bin/bash
-
-	#SBATCH --job-name=matlab_test
-	#SBATCH -o matlab_out%j.out
-	#SBATCH -e matlab_err%j.err
-	#SBATCH -N 1
-	#SBATCH --ntasks-per-node=1
-
-	echo -e '\n submitted Matlab job'
-	echo 'hostname'
-	hostname
-
-	#loads the matlab module
-	module load matlab
-
-	#runs the matlabtest.m file using matlab, forwards results to results.txt
-	matlab -r matlabtest > results.txt
-	</code></pre>
-		</b-tab>
-
-	</b-tabs>
+<div class="card">
+	<div class="card-body">
+		This is some text within a card body.
+	</div>
 </div>
 <div>
 	1. Create a MATLAB script. The linked repository provides a simple script, matlabtest.m, which generates a matrix, randomly populates it, finds the inverse, and then computes the product of the two matrices.
