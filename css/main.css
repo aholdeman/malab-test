@@ -1,9 +1,6 @@
 body {
     margin: 60px auto;
-    width: 70%;
-    text-align: center;
-    color: green;
-}
+    width: 70%;}
 
 a { text-decoration: none; color: #999; }
 a:hover { text-decoration: underline; }
@@ -21,9 +18,4 @@ pre code {
     border: 1px solid #000;
     display: block;
     padding: 20px;
-}
-
-div {
-    text-align: center;
-    color: green;
 }
