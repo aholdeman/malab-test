@@ -18,11 +18,11 @@ title: Python Tutorial
     where <i>filename</i> is the name of the Python file.
     <h3>Python Virtual Environment</h3>
         To use Python through the command line, you must first initialize a Python virtual environment. Virtual environments are isolated environments for projects, so that each project can have its own dependencies and packages installed, regardless of what dependencies every other project has. To create the virtual environment, run the following commands:
-    <p style="text-align: center;"><code>
+    <pre><code>
         module load python3/anaconda/5.2.0
         conda create -n python-environment python-essentials python-base
         source activate python-environment
-    </code></p>
+    </code></pre>
         Once the virtual environment is created, it can be launched at any time by ensuring that the python3 module is loaded, using the command
     <p style="text-align: center;"><code>
     module load python3/anaconda/5.2.0
@@ -34,11 +34,11 @@ title: Python Tutorial
         Next, you can install any packages you need inside this environment. These packages will only be available within this environment. Python packages and dependencies can be installed in your virtual environment by either using pip or the conda package manager.
     <h3>Pip</h3>
         Pip is a program that installs Python packages. It can be used to install packages and any other Python packages that are dependencies with the command:
-    <p><code>
+    <p style="text-align: center;"><code>
     pip install package-name
         </code></p>
         where package-name is the name of the package you wish to install. For example, to install SQLAlchemy, a Python SQL database library, you can use the command
-        <p><code>
+    <p style="text-align: center;"><code>
         pip install SQLAlchemy
             </code></p>
         Once downloaded, you will be able to use the SQLAlchemy library in your Python programs within the created virtual environment.
@@ -66,7 +66,7 @@ title: Python Tutorial
     2. Create a Python script. The linked repository provides a simple script, <i>test.py</i>, which demonstrates some of Python’s basic features.
     <h4>test.py</h4>
     <pre><code>
-        import random
+import random
 
 print("Hello World!")
 
@@ -87,7 +87,8 @@ print(sorted(rand_list))
     3. Prepare the submission script, which is the script that is submitted to the Slurm scheduler as a job in order to run the Python script. The linked repository provides the script <i>job.sh</i> as an example.
     <h4>job.sh</h4>
     <pre><code>
-        #!/bin/sh
+
+#!/bin/sh
 
 #SBATCH --job-name=py_test
 #SBATCH -o py_out%j.out
@@ -109,7 +110,7 @@ python3 test.py
 # exit the virtual environment
 source deactivate
     </code></pre>
-    4. Submit the job using: <code>sbatch job.sh</code>
+    <p>4. Submit the job using: <code>sbatch job.sh</code></p>
 
-    5. Examine the results.
+   <p>5. Examine the results.</p>
 </div>
