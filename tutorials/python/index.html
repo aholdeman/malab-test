@@ -1,0 +1,57 @@
+---
+layout: default
+title: Python Tutorial
+---
+
+<div>
+    <h1>Python Tutorial</h1>
+    <p>
+    Python is an interpreted high-level programming language for general-purpose programming. It’s design philosophy emphasizes code readability using significant whitespace. Python features a dynamic type system and automatic memory management. It supports multiple programming paradigms, including object-oriented, imperative, functional and procedural, and has a large and comprehensive standard library. Documentation for Python can be found on its official website.
+    Currently, versions 2.7 and 3.0 of Python are available on the cluster.
+    </p>
+    <h3>Basics</h3>
+    After loading the module, Python can be launched through the command line by simply typing
+    <code>python</code>.
+    Python files end in *.py, and can be run from the command line using
+    <code>python filename.py</code>
+    where <i>filename</i> is the name of the Python file.
+    <h3>Python Virtual Environment</h3>
+        To use Python through the command line, you must first initialize a Python virtual environment. Virtual environments are isolated environments for projects, so that each project can have its own dependencies and packages installed, regardless of what dependencies every other project has. To create the virtual environment, run the following commands:
+    <pre><code>
+        module load python3/anaconda/5.2.0
+        conda create -n python-environment python-essentials python-base
+        source activate python-environment
+    </code></pre>
+        Once the virtual environment is created, it can be launched at any time by ensuring that the python3 module is loaded, using the command
+    <pre><code>
+    module load python3/anaconda/5.2.0
+    </code></pre>
+        and then launching the environment by using
+    <pre><code>
+        source activate python-environment
+       </code></pre>
+        Next, you can install any packages you need inside this environment. These packages will only be available within this environment. Python packages and dependencies can be installed in your virtual environment by either using pip or the conda package manager.
+    <h3>Pip</h3>
+        Pip is a program that installs Python packages. It can be used to install packages and any other Python packages that are dependencies with the command:
+    <pre><code>
+    pip install package-name
+        </code></pre>
+        where package-name is the name of the package you wish to install. For example, to install SQLAlchemy, a Python SQL database library, you can use the command
+        <pre><code>
+        pip install SQLAlchemy
+            </code></pre>
+        Once downloaded, you will be able to use the SQLAlchemy library in your Python programs within the created virtual environment.
+    <h3>Conda</h3>
+        The conda package manager is similar to pip, but also installs non-Python packages and dependencies. Packages can be installed using the command
+    <pre><code>
+    conda install package-name
+       </code></pre>
+        where package-name is the name of the package you wish to install. Many conda packages are used in scientific computing and data analysis. For example, NumPy, a useful scientific computing package for Python that contains an N-dimensional array object, tools for integrating C++ and Fortran code, and useful linear algebra and random number capabilities, can be installed through Conda using the command
+          <pre><code>
+    conda install NumPy
+</code></pre>
+    To exit the Python virtual environment, use the command
+           <pre><code>
+              source deactivate
+           </code></pre>
+</div>
