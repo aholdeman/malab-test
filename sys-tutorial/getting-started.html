@@ -1,0 +1,54 @@
+---
+layout: default
+title: Getting Started
+---
+<link rel="stylesheet" href="../css/main.css">
+<div class="container">
+    <div class="jumbotron header-plain">
+        <h1>Getting Started</h1>
+    </div>
+    <div>
+    <p>
+        To gain access to the RC systems, users must have two-factor authentication enabled through a Duo account
+        <a href="https://sc.edu/about/offices_and_divisions/division_of_information_technology/security/sc_technologies/mfa.php">(more information here)</a>
+        and a SSH client. MacOSX and Linux systems come with a SSH client installed, while Microsoft Windows systems will need one installed.
+        We recommend the <a href="https://ccm.net/download/download-1423-ssh-secure-shell-windows">SSH Secure Shell Client</a>,
+        as it has a file manager built into it, but users can also use
+        <a href="https://www.putty.org/">PuTTY</a>.
+    </p>
+    <p>
+        From the Linux/MacOSX/SSH client command line, type in the following command to connect:
+        <br/>
+        <code style="text-align: center;"> ssh -p 222 username@servername.sc.edu</code>
+        where username is the username assigned when your account is created, and servername is the appropriate server host name. Available systems are listed below.
+    <div class="panel panel-default">
+        <div class="panel-body">
+            login.rci.sc.edu
+            <br/>
+            maxwell.cec.sc.edu
+            <br/>
+            planck.psc.sc.edu
+            <br/>
+            bolden.sc.edu
+            <br/>
+            nick.cec.sc.edu
+        </div>
+    </div>
+    All systems use SSH on port 222
+    </p>
+    <p>
+        To enable graphical programs on the cluster, add the -X option to the above ssh command.
+        This enables transparent forwarding of X applications to your local screen, which directs the communication through an encrypted tunnel.
+    </p>
+    <p>
+        You will then be prompted for your password, provided at account creation, and Duo authentication.
+        Once authenticated, you will be connected to a login node.
+    </p>
+    <p>
+        After your initial login, change your password using the command <code>passwd</code> on a login node. Your password should contain:
+        <li>At least 8 characters</li>
+        <li>A mixture of upper and lower case letters</li>
+        <li>At least one digit and at least one special characters</li>
+    </p>
+    </div>
+</div>
