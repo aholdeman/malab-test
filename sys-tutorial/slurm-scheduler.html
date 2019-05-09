@@ -25,10 +25,8 @@ title: Using Slurm Scheduler
     </div>
     <div>
         <p>A description of squeue state codes is below:</p>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-3">
-                <table class ="table" style="text-align: center;">
+        <div>
+                <table class ="table" style="text-align: center; width=100%">
                     <tr>
                         <td>R</td>
                         <td>Running</td>
@@ -50,16 +48,16 @@ title: Using Slurm Scheduler
                         <td>Job has an allocation, but execution has been suspended</td>
                     </tr>
                 </table>
-            </div>
-            <div class="col-md-3"></div>
         </div>
+
     </div>
     <div>
         Most users will only need to use a few simple Slurm commands to submit and monitor their jobs. Here is a sample of creating, running, and monitoring a Slurm job script.
 
         <p>First, create a sample job script.</p>
         <pre><code>
-           #!/bin/bash
+
+#!/bin/bash
 ### this sets the job name to TestJob
 #SBATCH --job-name=TestJob
 ### -n requests total cores. In this case, we are requesting 2 cores
