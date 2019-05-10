@@ -27,14 +27,14 @@ title: Cuda Tutorial
         <p style="text-align: center;"><code>module load cuda/8.0</code></p></p>
 
         <p>Compile the CUDA file using
-        <p style="text-align: center;"><code>nvcc < filename >.cu -o < filename ></code></p></p>
+        <p style="text-align: center;"><code>nvcc &lt;filename&gt;.cu -o &lt;filename&gt;</code></p></p>
 
-        <p>where <i>< filename ></i> is the name of the CUDA file. nvcc separates the source code into host and device
+        <p>where <i>&lt;filename&gt;</i> is the name of the CUDA file. nvcc separates the source code into host and device
             components.
             Device functions are processed by the NVIDIA compiler, and host functions are processed by the standard host
             compiler (like gcc).
-            -o <i>< filename ></i> signals to create an output file called
-            <i>< filename ></i> that can be used to run the program using ./<i>< filename ></i>. </p>
+            -o <i>&lt;filename&gt;</i> signals to create an output file called
+            <i>&lt;filename&gt;</i> that can be used to run the program using ./<i>&lt;filename&gt;</i>. </p>
     </div>
 
     <div>
@@ -48,8 +48,8 @@ title: Cuda Tutorial
 
         <h4>vector_add.cu</h4>
         <pre><code>
-#include < stdio.h >
-#include < iostream >
+#include &lt;stdio.h&gt;
+#include &lt;iostream&gt;
 //perform vector addition utilizing blocks and threads
 
 __global__ void add(int *a, int *b, int *c, int n) {

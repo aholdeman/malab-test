@@ -30,14 +30,14 @@ title: Open MPI Tutorial
             The C wrapper is named mpicc, the C++ wrapper can be compiled with mpicxx, mpiCC, or mpicc++.</p>
 
         <p>For example, to compile a C file, you can use the command:</p>
-        <p style="text-align: center;"><code>mpicc < filename >.c -o < filename ></code></p></p>
-        <p>where < filename > is the name of the file to be compiled. -o < filename > signals to create an output
-            file called < filename > that can be used to run the program using ./< filename >.</p>
+        <p style="text-align: center;"><code>mpicc &lt;filename&gt;.c -o &lt;filename&gt;</code></p></p>
+        <p>where &lt;filename&gt; is the name of the file to be compiled. -o &lt;filename&gt; signals to create an output
+            file called &lt;filename&gt; that can be used to run the program using ./&lt;filename&gt;.</p>
 
         <p>To run an Open MPI script, use the command
-        <p style="text-align: center;"><code>mpirun ./< filename > </code></p></p>
+        <p style="text-align: center;"><code>mpirun ./&lt;filename&gt; </code></p></p>
 
-        <p>where <i>< filename ></i> is the name of the executable created when the script was compiled.
+        <p>where <i>&lt;filename&gt;</i> is the name of the executable created when the script was compiled.
             mpirun takes command-line arguments such as -N 5, which would request 5 nodes to run the executable on. </p>
     </div>
 
@@ -49,8 +49,8 @@ title: Open MPI Tutorial
 
         <h4>test_mpi.c</h4>
         <pre><code>
-#include < mpi.h >
-#include < stdio.h >
+#include &lt;mpi.h&gt;
+#include &lt;stdio.h&gt;
 
 int main(int argc, char** argv) {
 
