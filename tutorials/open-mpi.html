@@ -6,16 +6,20 @@ title: Open MPI Tutorial
 <div class="container">
     <div class="jumbotron header-img">
         <h1>Open MPI Tutorial</h1>
-        <p><a class="btn btn-primary btn-lg header-button" href="https://github.com/torkian/slurm-openMPI/tree/openMPI_tutorial">
+        <p><a class="btn btn-primary btn-lg header-button"
+              href="https://github.com/torkian/slurm-openMPI/tree/openMPI_tutorial">
             Find the files in this tutorial on our GitHub!</a></p>
     </div>
     <p>
-        The Open MPI Project is an open source MPI-2 implementation that is developed and maintained by a consortium of academic, research, and industry partners.
+        The Open MPI Project is an open source MPI-2 implementation that is developed and maintained by a consortium of
+        academic, research, and industry partners.
         Open MPI is therefore able to combine the expertise, technologies, and resources from all across the
         High Performance Computing community in order to build the best MPI library available.
-        Open MPI offers advantages for system and software vendors, application developers and computer science researchers.
+        Open MPI offers advantages for system and software vendors, application developers and computer science
+        researchers.
         <a href="https://www.open-mpi.org/">Documentation for Open MPI can be found on its official website.</a></p>
-    <p>Currently, version 1.10.1 is available on the cluster, and Open MPI can be compiled through GCC, Intel, Open64, and PGI. </p>
+    <p>Currently, version 1.10.1 is available on the cluster, and Open MPI can be compiled through GCC, Intel, Open64,
+        and PGI. </p>
     <div>
         <h3 style="color:#537391;"><strong>Basics</strong></h3>
         <p>To use Open MPI, you must first load the Open MPI module with the compiler of your choice.
@@ -73,7 +77,8 @@ int main(int argc, char** argv) {
             <code>mpicc test_mpi.c -o test_mpi</code> which creates an executable called <i>test_mpi</i></p>
 
         <p>3. Prepare the submission script, which is the script that is submitted to the
-            Slurm scheduler as a job in order to run the Open MPI script. This repository provides the script <i>job.sh</i> as an example.</p>
+            Slurm scheduler as a job in order to run the Open MPI script. This repository provides the script
+            <i>job.sh</i> as an example.</p>
         In this example, the batch script requests 8 nodes to run on.
         <h4>job.sh</h4>
         <pre><code>

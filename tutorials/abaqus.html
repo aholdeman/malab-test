@@ -6,21 +6,25 @@ title: Abaqus Tutorial
 <div class="container">
     <div class="jumbotron header-img">
         <h1>Abaqus Tutorial</h1>
-        <p><a class="btn btn-primary btn-lg header-button" href="https://github.com/torkian/slurm-abaqus/tree/abaqus-tutorial">
+        <p><a class="btn btn-primary btn-lg header-button"
+              href="https://github.com/torkian/slurm-abaqus/tree/abaqus-tutorial">
             Find the files in this tutorial on our
             GitHub!</a></p>
     </div>
     <p>
         Abaqus is a finite element analysis software used for engineering simulations.
-        Using Abaqus, you can find solutions about stress and strain, natural frequencies and mode shape, forced response, fatigue, and more.
-        <a href="http://dsk.ippt.pan.pl/docs/abaqus/v6.13/index.html">Documentation for Abaqus can be found on its official
+        Using Abaqus, you can find solutions about stress and strain, natural frequencies and mode shape, forced
+        response, fatigue, and more.
+        <a href="http://dsk.ippt.pan.pl/docs/abaqus/v6.13/index.html">Documentation for Abaqus can be found on its
+            official
             website.</a></p>
     <p>Currently, Abaqus versions 2016 and 2017 are available on the cluster. </p>
     <div>
         <h3 style="color:#537391;"><strong>Basics</strong></h3>
         <p>To use Abaqus through the command line, first load the Abaqus module, then use a command similar to below:
         <p style="text-align: center;"><code>abaqus job=jobname input=inputscript.inp</code></p>
-        where jobname is used to specify the output file name for the job run, and inputscript.inp is the input file with script to be run in Abaqus.
+        where jobname is used to specify the output file name for the job run, and inputscript.inp is the input file
+        with script to be run in Abaqus.
         Abaqus input files, ending with the extension *.inp, describe the model and simulation to be performed.</p>
 
         <p>When running Abaqus jobs, it is advised that users create a new directory located in <i>/data</i> to
@@ -28,23 +32,24 @@ title: Abaqus Tutorial
         <p>Abaqus also provides sample input files, subroutine files, journal files,
             and parametric study script files in their
             <a href="http://abaqus.software.polimi.it/v6.13/books/exa/default.htm">Example Problems Guide</a></p>
-            These files can be fetched from Abaqus using the command</p>
+        These files can be fetched from Abaqus using the command</p>
         <p style="text-align: center;"><code>abaqus fetch job=filename</code></p>
-        <p>where filename is the name of the file you would like to fetch. To fetch a specific file, use the file’s extension:</p>
+        <p>where filename is the name of the file you would like to fetch. To fetch a specific file, use the file’s
+            extension:</p>
         <p style="text-align: center;"><code>abaqus fetch job=filename.inp</code></p>
         <p>Else, to fetch all files associated with that filename, leave the extension off.</p>
     </div>
     <div>
         <h3 style="color:#537391;"><strong>Running Abaqus through a job script</strong></h3>
         <p>
-        1. Create an Abaqus input file. This repository provides the file <i>tennis_surfcav.inp</i>,
-        which performs analysis on the impact of a tennis ball onto a racket, as well as the files
-        <i>tennis_ef1.inp</i> and <i>tennis_ef2.inp</i>, which are referenced in the analysis.
+            1. Create an Abaqus input file. This repository provides the file <i>tennis_surfcav.inp</i>,
+            which performs analysis on the impact of a tennis ball onto a racket, as well as the files
+            <i>tennis_ef1.inp</i> and <i>tennis_ef2.inp</i>, which are referenced in the analysis.
         </p>
         <p>
-        2. Prepare the submission script, which is the script that is submitted to the Slurm scheduler as a job in
-        order
-        to run the Abaqus script.
+            2. Prepare the submission script, which is the script that is submitted to the Slurm scheduler as a job in
+            order
+            to run the Abaqus script.
         </p>
         <h4>job.sh</h4>
         <pre><code>

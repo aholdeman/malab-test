@@ -11,16 +11,20 @@ title: R Tutorial
             GitHub!</a></p>
     </div>
     <p>
-        R is a system for statistical computation and graphics. It consists of a language plus a run-time environment with graphics, a debugger,
-        access to certain system functions, and the ability to run programs stored in script files. Some of R’s main features include:
+        R is a system for statistical computation and graphics. It consists of a language plus a run-time environment
+        with graphics, a debugger,
+        access to certain system functions, and the ability to run programs stored in script files. Some of R’s main
+        features include:
 
     <li>an effective data handling and storage facility,</li>
-        <li>a suite of operators for calculations on arrays, in particular matrices</li>
-        <li>a large, coherent, integrated collection of intermediate tools for data analysis,</li>
-        <li>graphical facilities for data analysis and display either on-screen or on hardcopy, and</li>
-        <li>a well-developed, simple and effective programming language which includes conditionals, loops, user-defined recursive functions and input and output facilities.</li>
-        <a href="https://www.rdocumentation.org/">Documentation for R can be found on its official
-            website.</a>
+    <li>a suite of operators for calculations on arrays, in particular matrices</li>
+    <li>a large, coherent, integrated collection of intermediate tools for data analysis,</li>
+    <li>graphical facilities for data analysis and display either on-screen or on hardcopy, and</li>
+    <li>a well-developed, simple and effective programming language which includes conditionals, loops, user-defined
+        recursive functions and input and output facilities.
+    </li>
+    <a href="https://www.rdocumentation.org/">Documentation for R can be found on its official
+        website.</a>
     Currently, versions 3.4.1 and 3.5.0 of R are available on the cluster.
     </p>
     <div>
@@ -53,7 +57,7 @@ export R_LIBS_USER=/home/$USER/.conda/envs/r-environment/lib/R/library/
         Packages can be installed with the install.packages() function in R.
         For example, to load the ggplot2 package, which is an R system for creating graphics, use the command
         <p style="text-align: center;"><code>
-           install.packages("ggplot2")
+            install.packages("ggplot2")
         </code></p>
         To exit the R virtual environment, use the command
         <p style="text-align: center;"><code>
@@ -64,7 +68,8 @@ export R_LIBS_USER=/home/$USER/.conda/envs/r-environment/lib/R/library/
     <div>
         <h3 style="color:#537391;"><strong>Running R through a job script</strong></h3>
         1. Ensure that you have a virtual environment created, following the steps described above.
-        <p>2. Create a R script. This repository provides a simple script, test.r, which demonstrates some of R's basic features.</p>
+        <p>2. Create a R script. This repository provides a simple script, test.r, which demonstrates some of R's basic
+            features.</p>
         <h4>test.r</h4>
         <pre><code>
 print("Starting tests.")

@@ -6,15 +6,18 @@ title: Amber Tutorial
 <div class="container">
     <div class="jumbotron header-img">
         <h1>Amber Tutorial</h1>
-        <p><a class="btn btn-primary btn-lg header-button" href="https://github.com/torkian/slurm-amber/tree/amber_tutorial">
+        <p><a class="btn btn-primary btn-lg header-button"
+              href="https://github.com/torkian/slurm-amber/tree/amber_tutorial">
             Find the files in this tutorial on our GitHub!</a></p>
     </div>
     <p>
         “Amber” refers to two things: a set of molecular mechanical force fields for the simulation of biomolecules
         (which are in the public domain, and are used in a variety of simulation programs);
         and a package of molecular simulation programs which includes source code and demos.
-        Amber is comprised of preparatory, simulation, and analysis programs that can be utilized in order to carry out these molecular simulations.
-        <a href="http://ambermd.org/doc12/Amber16.pdf">Documentation for Amber can be found on its official website.</a></p>
+        Amber is comprised of preparatory, simulation, and analysis programs that can be utilized in order to carry out
+        these molecular simulations.
+        <a href="http://ambermd.org/doc12/Amber16.pdf">Documentation for Amber can be found on its official website.</a>
+    </p>
     <p>Currently, Amber version 16 is available on the cluster. </p>
     <div>
         <h3 style="color:#537391;"><strong>Basics</strong></h3>
@@ -59,8 +62,10 @@ title: Amber Tutorial
 
         <p>where <i>mdin</i> is the name of the input file, <i>prmtop</i> is the name of the parameter/topology
             file, and <i>nc</i> is the set of initial coordinates for the run.
-            Output will be written to output files with default names mdout and resrt unless otherwise specified using command line arguments. </p>
-        <p>To run a program on a GPU node using the scheduler, be sure to request a GPU resource in the job script parameters, using the command:</p>
+            Output will be written to output files with default names mdout and resrt unless otherwise specified using
+            command line arguments. </p>
+        <p>To run a program on a GPU node using the scheduler, be sure to request a GPU resource in the job script
+            parameters, using the command:</p>
         <p style="text-align: center;"><code>#SBATCH --gres=gpu:1</code></p>
     </div>
 </div>

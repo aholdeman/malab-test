@@ -6,14 +6,16 @@ title: Cuda Tutorial
 <div class="container">
     <div class="jumbotron header-img">
         <h1>Cuda Tutorial</h1>
-        <p><a class="btn btn-primary btn-lg header-button" href="https://github.com/torkian/slurm-cuda/tree/cuda_tutorial">
+        <p><a class="btn btn-primary btn-lg header-button"
+              href="https://github.com/torkian/slurm-cuda/tree/cuda_tutorial">
             Find the files in this tutorial on our GitHub!</a></p>
     </div>
     <p>
         CUDA is a parallel computing platform and API model created by Nvidia that allows software developers
         to use a CUDA-enabled GPU for general purpose processing.
         The CUDA platform is designed to work with programming languages like C and C++.
-        <a href="https://docs.nvidia.com/cuda/">Documentation for using CUDA can be found on its official website.</a></p>
+        <a href="https://docs.nvidia.com/cuda/">Documentation for using CUDA can be found on its official website.</a>
+    </p>
     <p>Currently, CUDA versions 7.5, 8.0, 9.0, and 9.2 are available on the cluster.</p>
     <div>
         <h3 style="color:#537391;"><strong>Basics</strong></h3>
@@ -27,8 +29,10 @@ title: Cuda Tutorial
         <p>Compile the CUDA file using
         <p style="text-align: center;"><code>nvcc < filename >.cu -o < filename ></code></p></p>
 
-        <p>where <i>< filename ></i> is the name of the CUDA file. nvcc separates the source code into host and device components.
-            Device functions are processed by the NVIDIA compiler, and host functions are processed by the standard host compiler (like gcc).
+        <p>where <i>< filename ></i> is the name of the CUDA file. nvcc separates the source code into host and device
+            components.
+            Device functions are processed by the NVIDIA compiler, and host functions are processed by the standard host
+            compiler (like gcc).
             -o <i>< filename ></i> signals to create an output file called
             <i>< filename ></i> that can be used to run the program using ./<i>< filename ></i>. </p>
     </div>
@@ -36,7 +40,8 @@ title: Cuda Tutorial
     <div>
         <h3 style="color:#537391;"><strong>Running CUDA through a job script</strong></h3>
         <p>This tutorial was modified from a
-            <a href="https://www.olcf.ornl.gov/wp-content/uploads/2013/02/Intro_to_CUDA_C-TS.pdf">NVIDIA CUDA tutorial</a></p>
+            <a href="https://www.olcf.ornl.gov/wp-content/uploads/2013/02/Intro_to_CUDA_C-TS.pdf">NVIDIA CUDA
+                tutorial</a></p>
 
         1. Create a CUDA script. This repository provides a simple script, <i>vector_add.cu</i>,
         which performs simple vector addition while utilizing blocks and threads to execute in parallel.
@@ -100,7 +105,8 @@ int main(void) {
 
 
         <p>3. Prepare the submission script, which is the script that is submitted to the
-            Slurm scheduler as a job in order to run the CUDA script. This repository provides the script <i>job.sh</i> as an example.</p>
+            Slurm scheduler as a job in order to run the CUDA script. This repository provides the script <i>job.sh</i>
+            as an example.</p>
         <h4>job.sh</h4>
         <pre><code>
 #!/bin/bash
